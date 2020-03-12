@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- header begin -->
+            <header class="page-head-blog">
+                <div class="header-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <ol class="breadcrumb">
+                                    <li><a href="{% url 'home' %}">home</a></li>
+                                    <li class="active">blog</li>
+                                </ol> <!-- end of /.breadcrumb -->
+
+                            </div>
+                        </div>
+                    </div> <!-- /.container -->
+                </div> <!-- /.header-wrapper -->
+            </header> <!-- /.page-head (header end) -->
+
+
+            <section class="blog-content">
+                <div class="container">
+                    <div class="row">
+                        <main class="col-md-8 col-md-offset-2" style="display: block;">
+                            {% for i in b %}
+                            <article class="blog-item">
+                                <img class="img-responsive center-block" src="{{ i.image.url}}" alt="empty">
+                                <div class="blog-heading">
+
+                                    <h2 class="text-capitalize">{{ i.title }}</h2>
+
+                                    <span class="date" style="color: #000000;">{{ i.date }}</span>
+                                    <strong>Author:</strong>
+                                                            <span class="author-name text-uppercase" style="color: #000000;">{{ i.author }}</span>
+{#                                    <span>12 comments</span>#}
+                                </div>
+                                <p >
+                                    {{ i.description|linebreaks }}
+                                </p>
+
+                                {% endfor %}
+
+
+{#                                <div class="author">#}
+{#                                    <div class="row">#}
+{#                                        <div class="col-md-12">#}
+{#                                            <div class="about-author">#}
+{#                                                <div class="row">#}
+{#                                                    <div class="col-md-3">#}
+{#                                                        <img src="assets/img/commenter2.jpg" class="img-responsive center-block img-circle" alt="author">#}
+{#                                                    </div>#}
+{#                                                    <div class="col-md-9">#}
+{#                                                        <p>#}
+{#                                                            <strong>About Author</strong>#}
+{#                                                            <span class="author-name text-uppercase">david martin</span>#}
+{#                                                        </p>#}
+{#                                                        <p>#}
+{#                                                            Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac rutrum nulla. Nul maximus dolor in quam euismod ac viverra libero aliquet. Nunc sed nunc malesuada aliquet turpis eu dictum lectus. Cras eget sollicitudin lorem. Etiam commodo ultricies luctus.#}
+{#                                                        </p>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="author-contact">#}
+{#                                                <div class="row">#}
+{#                                                    <div class="col-md-6">#}
+{#                                                        <p class="pull-left">#}
+{#                                                            <span><i class="fa fa-picture-o"></i></span>#}
+{#                                                            <strong>25 Total Posts</strong>#}
+{#                                                        </p>#}
+{#                                                    </div>#}
+{#                                                    <div class="col-md-6">#}
+{#                                                        <ul class="author-contact-button pull-right">#}
+{#                                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                                                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>#}
+{#                                                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>#}
+{#                                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>#}
+{#                                                        </ul>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+                            </article>
+                        </main>
+                    </div>
+                </div>
+            </section>
+
+{% endblock content %}
